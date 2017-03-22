@@ -1,10 +1,11 @@
 import React from 'react';
+import Navbar from './Navbar';
 
 const App = React.createClass({
   render: function () {
     return (
       <div>
-        <h3 className='title is-3'>All Articles</h3>
+        <Navbar />
         {this.props.children}
       </div>
     );

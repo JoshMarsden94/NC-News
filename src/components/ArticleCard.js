@@ -1,21 +1,25 @@
 import React from 'react';
+import {Link} from 'react-router';
+import VoteButtons from './VoteButtons';
+
 
 const ArticleCard = function (props) {
   return (
     <div className='box'>
       <article className='media'>
         <div className='media-left'>
-          <p>Upvotes:</p>
-          {props.votes}
+          <VoteButtons votes={props.votes} handleClick={props.voteArticle.bind(null, props._id)}/>          
         </div>
         <div className='media-content'>
           <div className='content'>
-            <h3 className='title is-3'>{props.title}</h3>
+            <h3 className='title is-3'>
+              <Link to={`/articles/${props._id}`}>{props.title}</Link>
+            </h3>
           </div>
         </div>
       </article>
     </div>
-  )
-}
+  );
+};
 
 export default ArticleCard;

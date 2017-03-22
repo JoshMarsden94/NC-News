@@ -1,0 +1,15 @@
+.nav {
+    background-color: black;
+    margin-bottom: 1em;
+}
+
+.topics-block {
+    margin-left: 1em;
+    margin-bottom: 1em;    
+    display: flex;
+    align-items: center
+}
+
+.button {
+    margin: 0.2em;
+}

@@ -19,7 +19,7 @@ const ArticlePage = React.createClass({
           <p className=''>{this.props.article.body}</p>
           <div className="article-comments">
           </div>
-          <Comments id={this.props.params.article_id}/>
+          <Comments id={this.props.article._id}/>
         </div>
       );
     }
@@ -31,7 +31,7 @@ function mapDispatchToProps (dispatch) {
   return {
     getArticle: (id) => {
       dispatch(fetchArticle(id));
-    }
+    },    
   };
 }
 

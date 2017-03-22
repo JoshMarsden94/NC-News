@@ -7,12 +7,27 @@ const initialState = {
 };
 
 function reducerComments (prevState = initialState, action) {
-    const newState = Object.assign({}, prevState);
+    const newState = Object.assign({}, prevState);  
+
+    if (action.type === types.VOTE_COMMENT_SUCCESS) {
+       let newData = newState.data;
+       newData.map(comment => {
+           if (comment._id === action.comment_id) {
+               if (action.vote === 'up') {
+                   comment.votes++;
+                   return comment;
+               } else {
+                   comment.votes--;
+                   return comment;
+               }
+           }
+           return comment;
+       });
+    }    
  
     if (action.type === types.FETCH_COMMENTS_REQUEST) {
         newState.loading = true;
         newState.error = null;
-        
     }
 
     if (action.type === types.FETCH_COMMENTS_SUCCESS) {
@@ -29,6 +44,3 @@ function reducerComments (prevState = initialState, action) {
 }
 
 export default reducerComments;
-
-
-

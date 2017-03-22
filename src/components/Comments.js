@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchComments} from '../actions/actions';
+import {fetchComments, voteComment} from '../actions/actions';
 import CommentCard from './CommentCard';
    
 
@@ -17,7 +17,7 @@ const Comments = React.createClass({
 
           {this.props.comments.data.map((comment, i) => {
             return (
-              <CommentCard key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes}/>
+              <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes}/>
             );
           })}
         
@@ -31,7 +31,10 @@ function mapDispatchToProps (dispatch) {
   return {
     getComments: (id) => {
       dispatch(fetchComments(id));
-    },
+    },   
+    voteComment: (id, vote) => {
+      dispatch(voteComment(id, vote));
+    }     
   };
 }
 

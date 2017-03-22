@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchComments} from '../actions/actions';
-
-
+import CommentCard from './CommentCard';
+   
 
 const Comments = React.createClass({
   componentDidMount () {
@@ -13,8 +13,14 @@ const Comments = React.createClass({
     if (this.props.error) return <p>404</p>;
     if (this.props.comments) {
       return (
-        <div className="container">
-          <h3 className='title is-4'>{this.props.comments.data[0].body}</h3>          
+        <div id="comments" className="container">
+
+          {this.props.comments.data.map((comment, i) => {
+            return (
+              <CommentCard key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes}/>
+            );
+          })}
+        
         </div>
       );
     }

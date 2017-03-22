@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import './css/bulma.css';
 import './css/font-awesome.css';
 import './css/main.css';
@@ -19,7 +19,7 @@ const store = createStore(reducer, applyMiddleware(thunk,createLogger()));
 
 ReactDOM.render(
   <Provider store={store}>
-      <Router history={browserHistory}>
+      <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={ArticleList}/>
           <Route path='/topics/:topic' component={ArticleList} />

@@ -6,9 +6,9 @@ const Navbar = React.createClass({
     return (
         <nav className="nav">
             <div className="nav-left">            
-            <a className="nav-item">
+            <div className="nav-item">
             <Link to ="/"><img className="northcoders-logo" src="https://northcoders.com/images/logos/learn_to_code_manchester_rw_original.png" alt="Northcoders logo" /></Link>
-            </a>   
+            </div>   
             </div>              
             <a className="nav-item">
             <span className="icon">

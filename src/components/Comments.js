@@ -14,7 +14,7 @@ const Comments = React.createClass({
     if (this.props.comments) {
       return (
         <div className="container">
-          <h3 className='title is-3'>{this.props.comments.data[0].body}</h3>          
+          <h3 className='title is-4'>{this.props.comments.data[0].body}</h3>          
         </div>
       );
     }

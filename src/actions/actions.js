@@ -74,7 +74,6 @@ export function fetchTopicsError (err) {
 
 // Specific Article
 export function fetchArticle (id) {
-    console.log(id);
     return function (dispatch) {
         dispatch(fetchArticleRequest(id));
         axios

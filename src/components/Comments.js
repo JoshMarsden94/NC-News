@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchComments, voteComment} from '../actions/actions';
 import CommentCard from './CommentCard';
+import CommentForm from './CommentForm';
    
 
 const Comments = React.createClass({
@@ -20,7 +21,7 @@ const Comments = React.createClass({
               <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes}/>
             );
           })}
-        
+          <CommentForm />
         </div>
       );
     }

@@ -10,16 +10,16 @@ const Navbar = React.createClass({
             <Link to ="/"><img className="northcoders-logo" src="https://northcoders.com/images/logos/learn_to_code_manchester_rw_original.png" alt="Northcoders logo" /></Link>
             </div>   
             </div>              
-            <a className="nav-item">
+            <div className="nav-item">
             <span className="icon">
-                <i className="fa fa-github"></i>
+                <a href="https://github.com/northcoders"><i className="fa fa-github"></i></a>
             </span>
-            </a>
-            <a className="nav-item">
+            </div>
+            <div className="nav-item">
             <span className="icon">
-                <i className="fa fa-twitter"></i>
+                <a href="https://twitter.com/northcoders?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i className="fa fa-twitter"></i></a>
             </span>
-            </a>
+            </div>
         </nav>
     );
   }

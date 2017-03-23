@@ -8,6 +8,7 @@ const initialState = {
 
 function reducerComments (prevState = initialState, action) {
     const newState = Object.assign({}, prevState);  
+    
 
     if (action.type === types.VOTE_COMMENT_SUCCESS) {
        let newData = newState.data;
@@ -23,7 +24,7 @@ function reducerComments (prevState = initialState, action) {
            }
            return comment;
        });
-    }    
+    }
  
     if (action.type === types.FETCH_COMMENTS_REQUEST) {
         newState.loading = true;

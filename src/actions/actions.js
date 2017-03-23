@@ -184,9 +184,8 @@ export function voteComment (comment_id, vote) {
     dispatch(voteCommentRequest());
     axios
       .put(`${ROOT}/comments/${comment_id}?vote=${vote}`)
-      .then((res) => {
+      .then(() => {
         dispatch(voteCommentSuccess(comment_id, vote));
-        console.log("RES DATA", res.data)
       })
       .catch((error) => {
         dispatch(voteCommentError(error.message));
@@ -211,4 +210,38 @@ export function voteCommentError (error) {
     type: types.VOTE_COMMENT_ERROR,
     error
   };
+}
+
+// Posting Comments
+export function postComment (article_id, comments) {
+    return function (dispatch) {
+        dispatch(postCommentRequest());
+        axios
+            .post(`${ROOT}/articles/${article_id}/comments`)
+            .then(() => {
+                dispatch(postCommentSuccess(article_id, comments));
+            })
+            .catch((error) => {
+                dispatch(postCommentError(error.message));
+            });
+    };
+}
+
+export function postCommentRequest () {
+    return {type: types.POST_COMMENT_REQUEST};
+}
+
+export function postCommentSuccess (article_id, comments) {
+    return {
+        type: types.POST_COMMENT_SUCCESS,
+        article_id,
+        comments
+    };
+}
+
+export function postCommentError (error) {
+    return {
+        type: types.POST_COMMENT_ERROR,
+        error
+    };
 }

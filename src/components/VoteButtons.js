@@ -8,7 +8,6 @@ function voteButtons (props) {
             <a onClick={props.handleClick.bind(null, 'down')}><i className="fa fa-caret-down fa-2x" /></a>
         </div>
     );
-
 } 
 
 export default voteButtons;

@@ -4,20 +4,12 @@ import React from 'react';
 const CommentForm = React.createClass({
     render () {
         return (
-            <div className='container'>
-                <div className='box'>
-                    <div className="field">
-                        <label className="label">Comment</label>
-                        <p className="control">
-                            <textarea className="textarea" placeholder="Post comment here ..."></textarea>
-                        </p>
-                    </div>
-                </div>
-                <div className="field is-grouped">
-                    <p className="control">
-                        <button className="button is-primary">Submit</button>
-                    </p>
-                </div>
+            <div className='comment-form' onSubmit={this.props.handleSubmit.bind(null, this.props.id)}>
+                <form>
+                    <h3>Got a comment to make?</h3>
+                    <input className='inputtext' type='text' placeholder='Say something...' value={this.props.formText} onChange={this.props.formChange} />
+                    <input className='inputsubmit' type='submit' value='Post' />                    
+                </form>
             </div>
         );
     }

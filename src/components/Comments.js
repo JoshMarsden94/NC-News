@@ -21,7 +21,7 @@ const Comments = React.createClass({
               <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes}/>
             );
           })}
-          <CommentForm id={this.props.id} handleSubmit={this.props.handleSubmit} formText={this.props.formText} formChange={this.props.formChange}/>
+          <CommentForm id={this.props.id} handleSubmit={this.handleSubmit} formText={this.props.formText} formChange={this.handleChange}/>
         </div>
       );
     }

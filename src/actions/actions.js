@@ -218,7 +218,7 @@ export function postComment (id, comment) {
         dispatch(postCommentRequest());
         axios
             .post(`${ROOT}/articles/${id}/comments`, {
-                'comment': comment
+                comment: comment
             })
             .then((res) => {
                 dispatch(postCommentSuccess(res));

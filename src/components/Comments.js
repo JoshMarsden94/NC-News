@@ -61,4 +61,5 @@ function mapStateToProps (state) {
     formText: state.comments.formText
   };
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(Comments);

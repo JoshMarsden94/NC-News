@@ -213,13 +213,15 @@ export function voteCommentError (error) {
 }
 
 // Posting Comments
-export function postComment (article_id, comments) {
+export function postComment (id, comment) {
     return function (dispatch) {
         dispatch(postCommentRequest());
         axios
-            .post(`${ROOT}/articles/${article_id}/comments`)
-            .then(() => {
-                dispatch(postCommentSuccess(article_id, comments));
+            .post(`${ROOT}/articles/${id}/comments`, {
+                'comment': comment
+            })
+            .then((res) => {
+                dispatch(postCommentSuccess(res));
             })
             .catch((error) => {
                 dispatch(postCommentError(error.message));
@@ -231,11 +233,10 @@ export function postCommentRequest () {
     return {type: types.POST_COMMENT_REQUEST};
 }
 
-export function postCommentSuccess (article_id, comments) {
+export function postCommentSuccess (comment) {
     return {
         type: types.POST_COMMENT_SUCCESS,
-        article_id,
-        comments
+        data: comment
     };
 }
 
@@ -244,4 +245,11 @@ export function postCommentError (error) {
         type: types.POST_COMMENT_ERROR,
         error
     };
+}
+
+export function formChange (e) {
+  return {
+    type: types.FORM_CHANGE,
+    data: e
+  };
 }

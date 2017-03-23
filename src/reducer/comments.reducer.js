@@ -2,13 +2,34 @@ import * as types from '../actions/types';
 
 const initialState = {
     data: [],
-    loading: true,
-    error: null
+    loading: false,
+    error: null,
+    formText: ''
 };
 
 function reducerComments (prevState = initialState, action) {
     const newState = Object.assign({}, prevState);  
-    
+
+    if (action.type === types.FORM_CHANGE) {
+        newState.formText = action.data;
+    }
+
+    if (action.type === types.POST_COMMENT_REQUEST) {
+        newState.loading = true;
+    }
+
+    if (action.type === types.POST_COMMENT_SUCCESS) {
+        const newComment = action.data.data.comment;
+        const id = newComment.belongs_to;
+        newState.comments = Object.assign({}, newState.comments);
+        newState.comments[id] = newComment;
+        newState.loading = false;
+    }
+
+    if (action.type === types.POST_COMMENT_ERROR) {
+        newState.error = action.data;
+        newState.loading = false;
+    }
 
     if (action.type === types.VOTE_COMMENT_SUCCESS) {
        let newData = newState.data;

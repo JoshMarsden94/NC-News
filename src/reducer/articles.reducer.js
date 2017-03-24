@@ -22,9 +22,10 @@ export function getTopArticles (articles, num) {
 }
 
 function reducerArticles (prevState = initialState, action) {
-  const newState = Object.assign({}, prevState);
+  let newState = prevState;
 
    if (action.type === types.VOTE_ARTICLE_SUCCESS) {
+    newState = Object.assign({}, prevState);
     newState.byId = Object.assign({}, newState.byId);
     newState.byId[action.data._id] = action.data;
     newState.loading = false;
@@ -32,17 +33,20 @@ function reducerArticles (prevState = initialState, action) {
   }
 
   if (action.type === types.FETCH_ALL_ARTICLES_REQUEST) {
+    newState = Object.assign({}, prevState);
     newState.loading = true;
     newState.error = null;
   }
 
   if (action.type === types.FETCH_ALL_ARTICLES_SUCCESS) {
+    newState = Object.assign({}, prevState);
     newState.byId = action.data;
     newState.loading = true;
     newState.byId = normaliseData(action.data);    
   }
 
   if (action.type === types.FETCH_ALL_ARTICLES_ERROR) {
+    newState = Object.assign({}, prevState);
     newState.error = action.data;
     newState.loading = false;
   }

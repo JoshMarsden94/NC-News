@@ -9,43 +9,6 @@ const initialState = {
 
 function reducerComments (prevState = initialState, action) {
     const newState = Object.assign({}, prevState);  
-
-    if (action.type === types.FORM_CHANGE) {
-        newState.formText = action.data;
-    }
-
-    if (action.type === types.POST_COMMENT_REQUEST) {
-        newState.loading = true;
-    }
-
-    if (action.type === types.POST_COMMENT_SUCCESS) {
-        const newComment = action.data.data.comment;
-        const id = newComment.belongs_to;
-        newState.comments = Object.assign({}, newState.comments);
-        newState.comments[id] = newComment;
-        newState.loading = false;
-    }
-
-    if (action.type === types.POST_COMMENT_ERROR) {
-        newState.error = action.data;
-        newState.loading = false;
-    }
-
-    if (action.type === types.VOTE_COMMENT_SUCCESS) {
-       let newData = newState.data;
-       newData.map(comment => {
-           if (comment._id === action.comment_id) {
-               if (action.vote === 'up') {
-                   comment.votes++;
-                   return comment;
-               } else {
-                   comment.votes--;
-                   return comment;
-               }
-           }
-           return comment;
-       });
-    }
  
     if (action.type === types.FETCH_COMMENTS_REQUEST) {
         newState.loading = true;
@@ -59,6 +22,42 @@ function reducerComments (prevState = initialState, action) {
 
     if (action.type === types.FETCH_COMMENTS_ERROR) {
         newState.error = action.err;
+        newState.loading = false;
+    }
+
+    if (action.type === types.VOTE_COMMENT_SUCCESS) {
+       let newData = newState.data.slice();
+       newData.map(comment => {
+           if (comment._id === action.comment_id) {
+               if (action.vote === 'up') {
+                   comment.votes++;
+                   return comment;
+               } else {
+                   comment.votes--;
+                   return comment;
+               }
+           }
+           return comment;
+       });
+       newState.data = newData;
+    }    
+
+    if (action.type === types.FORM_CHANGE) {
+        newState.formText = action.data;
+    }
+
+    if (action.type === types.POST_COMMENT_REQUEST) {
+        newState.loading = true;
+    }
+
+    if (action.type === types.POST_COMMENT_SUCCESS) {
+        const newComment = action.data.data.comment;
+        newState.data = newState.data.concat(newComment);
+        newState.loading = false;
+    }
+
+    if (action.type === types.POST_COMMENT_ERROR) {
+        newState.error = action.data;
         newState.loading = false;
     }
 

@@ -1,16 +1,19 @@
 import React from 'react';
 
-
 const CommentForm = React.createClass({
+    handleSubmit (e) {
+        e.preventDefault();
+        this.props.handleSubmit(this.props.id);
+    },
     render () {
         return (
-            <div className='container' onSubmit={this.props.handleSubmit.bind(null, this.props.id)}>
+            <div className='container'>
                  <div className='box'>
                      <div className="field">
-                        <form>
+                        <form onSubmit={this.handleSubmit}>
                             <h3>Got a comment to make?</h3>
                             <textarea className="textarea" placeholder="Post comment here ..." value={this.props.formText} onChange={this.props.formChange}></textarea>
-                            <button className="button is-primary inputsubmit" type='submit' value='Post'>Submit</button>                   
+                            <button className="button is-primary" type='submit' value='Post'>Submit</button>                   
                         </form>
                      </div>
                  </div>

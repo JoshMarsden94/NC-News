@@ -10,7 +10,7 @@ const Comments = React.createClass({
     this.props.getComments(this.props.id);
   },
   render () {
-    if (this.props.loading) return <p>'Loading...'</p>;
+    if (this.props.loading && !this.props.comments.data.length) return <p>'Loading...'</p>;
     if (this.props.error) return <p>404</p>;
     if (this.props.comments) {
       return (
@@ -26,8 +26,7 @@ const Comments = React.createClass({
       );
     }
   },
-  handleSubmit (id, e) {
-    e.preventDefault();
+  handleSubmit (id) {
     this.props.postComment(id, this.props.formText)
     this.props.formChange('');
   },

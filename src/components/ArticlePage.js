@@ -8,7 +8,7 @@ const ArticlePage = React.createClass({
     this.props.getArticle(this.props.params.article_id);
   },
   render () {
-    if (this.props.loading) return <p>'Loading...'</p>;
+    if (this.props.loading) return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
     if (this.props.error) return <p>404</p>;
     if (this.props.article) {
       return (

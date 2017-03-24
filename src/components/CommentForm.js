@@ -7,7 +7,7 @@ const CommentForm = React.createClass({
     },
     render () {
         return (
-            <div className='container'>
+            <div className='container comment-form'>
                  <div className='box'>
                      <div className="field">
                         <form onSubmit={this.handleSubmit}>

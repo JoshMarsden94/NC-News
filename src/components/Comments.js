@@ -10,7 +10,7 @@ const Comments = React.createClass({
     this.props.getComments(this.props.id);
   },
   render () {
-    if (this.props.loading && !this.props.comments.data.length) return <p>'Loading...'</p>;
+    if (this.props.loading && !this.props.comments.data.length) return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
     if (this.props.error) return <p>404</p>;
     if (this.props.comments) {
       return (
@@ -18,7 +18,7 @@ const Comments = React.createClass({
 
           {this.props.comments.data.map((comment, i) => {
             return (
-              <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes} deleteComment={this.deleteComment}/>
+              <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes} deleteComment={this.props.deleteComment}/>
             );
           })}
           <CommentForm id={this.props.id} handleSubmit={this.handleSubmit} formText={this.props.formText} formChange={this.handleChange}/>
@@ -32,9 +32,6 @@ const Comments = React.createClass({
   },
   handleChange (e) {
     this.props.formChange(e.target.value);
-  },
-  deleteComment (id) {
-    this.props.deleteComment(id);
   }
 });
 

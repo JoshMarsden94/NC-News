@@ -5,19 +5,15 @@ body {
     color: #0B0C0C;
 }
 
-.nav {
-    background-color: black;
+.hero {
     margin-bottom: 1em;
 }
 
 .topics-block {
-    margin-left: 1em;
     margin-bottom: 1em;    
     display: flex;
     align-items: center
 }
-
-
 
 .button {
     margin: 0.2em;
@@ -34,8 +30,10 @@ body {
     margin-bottom: 0;
 }
 
-
-
 .fa-trash-o {
     cursor: pointer
+}
+
+.comment-form {
+    margin-bottom: 1.5em
 }

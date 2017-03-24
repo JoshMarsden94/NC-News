@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #0B0C0C;
+}
+
 .nav {
     background-color: black;
     margin-bottom: 1em;
@@ -10,11 +17,22 @@
     align-items: center
 }
 
+
+
 .button {
     margin: 0.2em;
 }
 
+.media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.media h3 {
+    padding-left: 15px;
+    margin-bottom: 0;
+}
 
 
 

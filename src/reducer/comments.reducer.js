@@ -61,6 +61,19 @@ function reducerComments (prevState = initialState, action) {
         newState.loading = false;
     }
 
+    if (action.type === types.DELETE_COMMENT_REQUEST) {
+        newState.loading = true;
+    }
+
+    if (action.type === types.DELETE_COMMENT_SUCCESS) {
+        newState.data = prevState.data.filter((comment) => comment._id !== action.comment_id);
+    }
+
+    if (action.type === types.DELETE_COMMENT_ERROR) {
+        newState.error = action.data;
+        newState.loading = false;
+    }
+
     return newState;
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchComments, voteComment, postComment, formChange} from '../actions/actions';
+import {fetchComments, voteComment, postComment, formChange, deleteComment} from '../actions/actions';
 import CommentCard from './CommentCard';
 import CommentForm from './CommentForm';
    
@@ -18,7 +18,7 @@ const Comments = React.createClass({
 
           {this.props.comments.data.map((comment, i) => {
             return (
-              <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes}/>
+              <CommentCard id={comment._id} voteComment={this.props.voteComment} key={i} body={comment.body} created_by={comment.created_by} votes={comment.votes} deleteComment={this.deleteComment}/>
             );
           })}
           <CommentForm id={this.props.id} handleSubmit={this.handleSubmit} formText={this.props.formText} formChange={this.handleChange}/>
@@ -32,6 +32,9 @@ const Comments = React.createClass({
   },
   handleChange (e) {
     this.props.formChange(e.target.value);
+  },
+  deleteComment (id) {
+    this.props.deleteComment(id);
   }
 });
 
@@ -48,6 +51,9 @@ function mapDispatchToProps (dispatch) {
     },
     formChange: e => {
       dispatch(formChange(e));
+    },
+    deleteComment: (id) => {
+      dispatch(deleteComment(id));
     }     
   };
 }

@@ -1,4 +1,4 @@
 module.exports = {
-  ROOT: 'https://northcoders-news-api.herokuapp.com/api',
+  ROOT: 'https://gentle-wave-92796.herokuapp.com/api',
   USERNAME: 'northcoder'
 };

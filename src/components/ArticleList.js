@@ -7,7 +7,6 @@ import _ from 'underscore';
 
 import { getTopArticles } from '../reducer/articles.reducer';
 
-
 const ArticleList = React.createClass({
   componentDidMount () {
     this.props.getArticles();

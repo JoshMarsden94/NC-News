@@ -4,18 +4,22 @@ import axios from 'axios';
 import {ROOT} from '../../config';
 
 // Articles
-export function fetchAllArticles () {
-    return function (dispatch) {
-        dispatch(fetchAllArticlesRequest());
-        axios
-            .get(`${ROOT}/articles`)
-            .then(res => {
-                dispatch(fetchAllArticlesSuccess(res.data.articles));
-            })
-            .catch(err => {
-                dispatch(fetchAllArticlesError(err));
-            });
-    };
+export function fetchAllArticles (topic) {
+  let url = `${ROOT}`;
+  if (topic) url += `/topics/${topic}/articles`;
+  else url += '/articles';
+
+  return function (dispatch) {
+    dispatch(fetchAllArticlesRequest());
+    axios
+      .get(url)
+      .then(res => {
+        dispatch(fetchAllArticlesSuccess(res.data.articles));
+      })
+      .catch(err => {
+        dispatch(fetchAllArticlesError(err));
+      });
+  };
 }
 
 export function fetchAllArticlesRequest () {
@@ -256,7 +260,6 @@ export function formChange (e) {
 
 // Deleting Comments
 export function deleteComment (id) {
-    // console.log(id)
   return function (dispatch) {
     dispatch(deleteCommentRequest());
     axios

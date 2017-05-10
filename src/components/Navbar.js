@@ -10,7 +10,8 @@ const Navbar = React.createClass({
                 <div className="container">
                     <div className="nav-left">
                         <div className="nav-item">
-                            <Link to ="/" className="northcoders-logo-container"><img className="northcoders-logo" src="https://northcoders.com/images/logos/learn_to_code_manchester_rw_original.png" alt="Northcoders logo" /></Link>          
+                            <Link to ="/" className="northcoders-logo-container"><img className="northcoders-logo" src="https://northcoders.com/images/logos/learn_to_code_manchester_rw_original.png" alt="Northcoders logo" /></Link>
+                            <h1>Northcoders News</h1>          
                         </div>
                     </div>
                 </div>

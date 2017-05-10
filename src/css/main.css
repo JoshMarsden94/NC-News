@@ -1,5 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
+/*NAVBAR*/
+.hero {
+    height: 100%;
+    width: 100%
+}
+
+.hero-body {
+    height: 100%;
+    width: 100%
+}
+
+/*ARTICLE-LIST*/
+#ArticleList {
+    padding-bottom: 30px;
+}
+
+/*COMMENT-CARD*/
+#comment-heading {
+    color: #00C5A1;
+    margin-bottom: 10px
+}
+
+#flex-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/*OTHER*/
+
 body {
     font-family: 'Nunito', sans-serif;
     color: #0B0C0C;
@@ -36,4 +67,12 @@ body {
 
 .comment-form {
     margin-bottom: 1.5em
+}
+
+.votes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
 }

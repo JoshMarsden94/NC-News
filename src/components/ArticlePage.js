@@ -13,17 +13,15 @@ const ArticlePage = React.createClass({
     if (this.props.article) {
       return (
         <div className="container">
-          <p>{this.props.article.belongs_to}</p>
-          <h3 className='title is-3'>{this.props.article.title}</h3>
-          <p className=''><strong>{this.props.article.created_by}</strong></p>
-          <p className=''>{this.props.article.body}</p>
-          <div className="article-comments">
+          <div className='box article-page-card'>
+            <p className='title is-2'>{this.props.article.title}</p>
+            <p className='title is-5'><strong>Author: {this.props.article.created_by}</strong></p>
+            <p className=''>{this.props.article.body}</p>
           </div>
-          <Comments id={this.props.article._id}/>
+            <Comments id={this.props.article._id}/>
         </div>
       );
-    }
-      
+    }   
   }
 });
 

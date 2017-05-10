@@ -24,3 +24,9 @@ npm run dev
 ```
 Once the webpack has finished compiling the project can then be found on [http://localhost:9090/](http://localhost:9090/)
 
+## Built With
+- [React](https://facebook.github.io/react/) - Front End web framework used
+- [Redux](http://redux.js.org/docs/introduction/) - State container/management
+- [Axios](https://github.com/mzabriskie/axios) - HTTP Client for the browser
+- [Bulma](http://bulma.io/) - CSS Framework Based on Flexbox
+- [Webpack](https://webpack.github.io/) - Module Bundler

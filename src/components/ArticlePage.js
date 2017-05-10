@@ -8,14 +8,14 @@ const ArticlePage = React.createClass({
     this.props.getArticle(this.props.params.article_id);
   },
   render () {
-    if (this.props.loading) return <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />;
+    if (this.props.loading) return <i className="loading-spinner fa fa-spinner fa-pulse fa-3x fa-fw" />;
     if (this.props.error) return <p>404</p>;
     if (this.props.article) {
       return (
         <div className="container">
           <div className='box article-page-card'>
             <p className='title is-2'>{this.props.article.title}</p>
-            <p className='title is-5'><strong>Author: {this.props.article.created_by}</strong></p>
+            <p className='title is-5'>Author: <span className='Author-name'>{this.props.article.created_by}</span></p>
             <p className=''>{this.props.article.body}</p>
           </div>
             <Comments id={this.props.article._id}/>

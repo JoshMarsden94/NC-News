@@ -16,12 +16,12 @@ function CommentForm (props) {
     );
     function handleSubmit (e) {
         e.preventDefault();
-        props.handleSubmit(props.id);
+        props._handleSubmit(props.id);
     }       
 }
 
 CommentForm.propTypes = {
-    handleSubmit: React.PropTypes.func,
+    _handleSubmit: React.PropTypes.func,
     id: React.PropTypes.string,
     formText: React.PropTypes.string,
     formChange: React.PropTypes.func

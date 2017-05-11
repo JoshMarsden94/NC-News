@@ -4,6 +4,7 @@ Northcoders News is a social news aggregation, web content rating, and discussio
 
 This repo contains all the work that has gone into the front end of the project. To find out more about the backend which Northcoders News run off, please visit my backend repo [here!](https://github.com/JoshMarsden94/NC-News-Backend)
 
+
 ## Getting Started
 
 If you would like to run this project locally, please ensure you have Node v7.0.0 or higher installed. You can check this by entering the following command into your terminal:
@@ -23,6 +24,16 @@ npm install
 npm run dev
 ```
 Once the webpack has finished compiling the project can then be found on [http://localhost:9090/](http://localhost:9090/)
+
+
+## Testing 
+
+I have also included tests that were written for my reducers, to ensure they were functioning correctly. To run and view the tests please enter the following command from within the NC-News-Frontend directory.
+
+```s
+npm test
+```
+
 
 ## Built With
 - [React](https://facebook.github.io/react/) - Front End web framework used

@@ -128,20 +128,20 @@ export function voteArticle (id, vote) {
     };
 }
 
-function voteArticleRequest () {
+export function voteArticleRequest () {
     return {
         type: types.VOTE_ARTICLE_REQUEST
     };
 }
 
-function voteArticleSuccess (data) {
+export function voteArticleSuccess (data) {
     return {
         type: types.VOTE_ARTICLE_SUCCESS,
         data
     };
 }
 
-function voteArticleError (error) {
+export function voteArticleError (error) {
     return {
         type: types.VOTE_ARTICLE_ERROR,
         error
@@ -162,20 +162,20 @@ export function fetchComments (id) {
     };
 }
 
-function fetchCommentsRequest () {
+export function fetchCommentsRequest () {
     return {
         type: types.FETCH_COMMENTS_REQUEST
     };
 }
 
-function fetchCommentsSuccess (comments) {
+export function fetchCommentsSuccess (comments) {
     return {
         type: types.FETCH_COMMENTS_SUCCESS,
         data: comments
     };
 }
 
-function fetchCommentsError (error) {
+export function fetchCommentsError (error) {
     return {
         type: types.FETCH_COMMENTS_ERROR,
         error

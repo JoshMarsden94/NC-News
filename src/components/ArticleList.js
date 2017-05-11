@@ -4,13 +4,14 @@ import {fetchAllArticles, voteArticle} from '../actions/actions';
 import ArticleCard from './ArticleCard';
 import NavbarTopics from './NavbarTopics';
 import _ from 'underscore';
+import { Component } from 'react';
 
 import { getTopArticles } from '../reducer/articles.reducer';
 
-const ArticleList = React.createClass({
+class ArticleList extends Component {
   componentDidMount () {
     this.props.getArticles();
-  },
+  }
   render () {
 
     return (
@@ -32,7 +33,7 @@ const ArticleList = React.createClass({
     );
   }
 
-});
+}
 
 function mapDispatchToProps (dispatch) {
   return {
@@ -52,4 +53,13 @@ function mapStateToProps (state) {
     error: state.articles.error
   };
 }
+
+ArticleList.propTypes = {
+  getArticles: React.PropTypes.func,
+  params: React.PropTypes.object,
+  topic: React.PropTypes.string,
+  articles: React.PropTypes.object,
+  voteArticle: React.PropTypes.func
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);

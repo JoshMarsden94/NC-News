@@ -23,4 +23,13 @@ const CommentCard = function (props) {
   );
 };
 
+CommentCard.propTypes = {
+  created_by: React.PropTypes.string,
+  deleteComment: React.PropTypes.func,
+  id: React.PropTypes.string,
+  votes: React.PropTypes.number,
+  voteComment: React.PropTypes.func,
+  body: React.PropTypes.string
+};
+
 export default CommentCard;

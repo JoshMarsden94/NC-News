@@ -2,11 +2,12 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {fetchArticle} from '../actions/actions';
 import Comments from './Comments';
+import { Component } from 'react';
 
-const ArticlePage = React.createClass({
+class ArticlePage extends Component {
   componentDidMount () {
     this.props.getArticle(this.props.params.article_id);
-  },
+  }
   render () {
     if (this.props.loading) return <i className="loading-spinner fa fa-spinner fa-pulse fa-3x fa-fw" />;
     if (this.props.error) return <p>404</p>;
@@ -23,7 +24,7 @@ const ArticlePage = React.createClass({
       );
     }   
   }
-});
+}
 
 function mapDispatchToProps (dispatch) {
   return {
@@ -40,4 +41,18 @@ function mapStateToProps (state) {
     error: state.article.error,
   };
 }
+
+ArticlePage.propTypes = {
+  getArticle: React.PropTypes.func,
+  params: React.PropTypes.object,
+  article_id: React.PropTypes.string,
+  loading: React.PropTypes.bool,
+  error: React.PropTypes.object,
+  article: React.PropTypes.object,
+  title: React.PropTypes.string,
+  created_by: React.PropTypes.string,
+  body: React.PropTypes.string,
+  _id: React.PropTypes.string
+};
+
 export default connect(mapStateToProps, mapDispatchToProps)(ArticlePage);

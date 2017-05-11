@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { Component } from 'react';
 
-const App = React.createClass({
-  render: function () {
+class App extends Component {
+  render () {
     return (
       <div>
         <Navbar />
@@ -10,6 +11,10 @@ const App = React.createClass({
       </div>
     );
   }
-});
+}
+
+App.propTypes = {
+  children: React.PropTypes.object
+};
 
 export default App;

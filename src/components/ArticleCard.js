@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 import VoteButtons from './VoteButtons';
 
-
 const ArticleCard = function (props) {
   return (
     <div className='box'>
@@ -20,6 +19,13 @@ const ArticleCard = function (props) {
       </article>
     </div>
   );
+};
+
+ArticleCard.propTypes = {
+  votes: React.PropTypes.number,
+  voteArticle: React.PropTypes.func,
+  title: React.PropTypes.string,
+  _id: React.PropTypes.string
 };
 
 export default ArticleCard;

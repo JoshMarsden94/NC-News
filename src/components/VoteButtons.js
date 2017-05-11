@@ -10,4 +10,9 @@ function voteButtons (props) {
     );
 } 
 
+voteButtons.propTypes = {
+    handleClick: React.PropTypes.func,
+    votes: React.PropTypes.number
+};
+
 export default voteButtons;

@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router';
+import { Component } from 'react';
 
-const Navbar = React.createClass({
-  render: function () {
+class Navbar extends Component {
+  render () {
     return (
         <section className="hero is-primary">
         <div className="hero-body">
@@ -16,6 +17,6 @@ const Navbar = React.createClass({
         </section>
     );
   }
-});
+}
 
 export default Navbar;

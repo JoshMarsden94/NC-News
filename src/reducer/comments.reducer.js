@@ -65,7 +65,7 @@ function reducerComments (prevState = initialState, action) {
         newState.loading = true;
     }
 
-    if (action.type === types.DELETE_COMMENT_SUCCESS) {
+    if (action.type === types.DELETE_COMMENT_SUCCESS) {        
         newState.data = prevState.data.filter((comment) => comment._id !== action.comment_id);
     }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
+// import createLogger from 'redux-logger'; pass createLogger() as second argument to applyMiddleware
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import './css/bulma.css';
@@ -15,7 +15,7 @@ import ArticlePage from './components/ArticlePage';
 import NotFound from './components/NotFound';
 import reducer from './reducer/reducer';
 
-const store = createStore(reducer, applyMiddleware(thunk,createLogger()));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

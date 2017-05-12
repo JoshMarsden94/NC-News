@@ -15,20 +15,23 @@ class ArticleList extends Component {
   render () {
 
     return (
-      <div id='ArticleList' className="container">
+      <div>
 
         <NavbarTopics />
+        
+        <div id='ArticleList' className="container">
 
-        {!this.props.params.topic && _.map(getTopArticles(this.props.articles, 10), (article, i) => {
-          return <ArticleCard {...article} voteArticle={this.props.voteArticle} key={i}/>;
-        })}
+            {!this.props.params.topic && _.map(getTopArticles(this.props.articles, 10), (article, i) => {
+              return <ArticleCard {...article} voteArticle={this.props.voteArticle} key={i}/>;
+            })}
 
-        {this.props.params.topic && _.map(this.props.articles.byId, (article, i) => {
-          if (article.belongs_to === this.props.params.topic) {
-          return <ArticleCard {...article} voteArticle={this.props.voteArticle} key={i}/>;
-         }
-        })}
+            {this.props.params.topic && _.map(this.props.articles.byId, (article, i) => {
+              if (article.belongs_to === this.props.params.topic) {
+              return <ArticleCard {...article} voteArticle={this.props.voteArticle} key={i}/>;
+            }
+            })}
 
+        </div>
       </div>
     );
   }

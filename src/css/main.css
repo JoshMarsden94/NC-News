@@ -3,7 +3,7 @@
 /*NAVBAR*/
 .hero {
     height: 200px;
-    margin-bottom: 1em;    
+    /*margin-bottom: 1em;    */
 }
 
 .northcoders-logo {
@@ -25,6 +25,39 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;   
+}
+
+/*NAVBAR-TOPICS*/
+.navbar-topics {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center
+}
+
+.button {
+    background: #0E81C7;
+    color: #fff;
+    font-size: 1.2em;
+    height: 35px;
+    width: 80px;
+    line-height: 60px;
+    margin: 25px 25px;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.button {
+    margin: 0.4em;
+    opacity: 1
+}
+ 
+ button:hover {
+  opacity: 0.75;
 }
 
 /*ARTICLE-LIST*/
@@ -50,16 +83,6 @@
 body {
     font-family: 'Nunito', sans-serif;
     color: #0B0C0C;
-}
-
-.topics-block {
-    margin-bottom: 1em;    
-    display: flex;
-    align-items: center
-}
-
-.button {
-    margin: 0.2em;
 }
 
 .media {

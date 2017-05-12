@@ -8,8 +8,9 @@
     "lint": "eslint ./",
     "precommit": "npm test",
     "dev": "webpack-dev-server -d --config webpack.config.js --progress --colors",
+    "start": "node ./server/index.js",
     "build": "webpack --config webpack.prod.config.js --progress --colors",
-    "start": "node ./server/index.js"
+    "postinstall": "webpack --config webpack.prod.config.js --progress --colors"
   },
   "author": "",
   "license": "ISC",

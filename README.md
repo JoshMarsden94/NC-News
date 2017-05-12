@@ -4,8 +4,12 @@ Northcoders News is a social news aggregation, web content rating, and discussio
 
 This repo contains all the work that has gone into the front end of the project. To find out more about the backend which Northcoders News run off, please visit my backend repo [here!](https://github.com/JoshMarsden94/NC-News-Backend)
 
+## Visit the site
 
-## Getting Started
+If you would like to take a look at Northcoders News please click [here](https://nc-news.herokuapp.com/). Feel free to interact, up-vote, down-vote & leave comments at your will!! 
+
+
+## Getting Started Locally
 
 If you would like to run this project locally, please ensure you have Node v7.0.0 or higher installed. You can check this by entering the following command into your terminal:
 ```s

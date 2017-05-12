@@ -8,7 +8,7 @@ function CommentForm (props) {
                     <form onSubmit={handleSubmit}>
                         <h3>Got a comment to make?</h3>
                         <textarea className="textarea" placeholder="Post comment here ..." value={props.formText} onChange={props.formChange}></textarea>
-                        <button className="button is-primary" type='submit' value='Post'>Submit</button>                   
+                        <button id="submit-button" className="button is-primary" type='submit' value='Post'>Submit</button>                   
                     </form>
                     </div>
                 </div>

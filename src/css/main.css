@@ -44,8 +44,6 @@
     font-size: 1.2em;
     height: 35px;
     width: 80px;
-    line-height: 60px;
-    margin: 25px 25px;
     text-align: center;
     border: 0;
     transition: all 0.3s ease 0s;
@@ -56,8 +54,10 @@
     opacity: 1
 }
  
- button:hover {
-  opacity: 0.75;
+.button:hover {
+    color: #fff;
+    opacity: 0.75;
+    background-color: lightskyblue  
 }
 
 /*ARTICLE-LIST*/
@@ -67,7 +67,7 @@
 
 /*COMMENT-CARD*/
 #comment-heading {
-    color: #00C5A1;
+    color: lightskyblue;
     margin-bottom: 10px
 }
 
@@ -113,7 +113,7 @@ body {
 }
 
 .Author-name {
-    color: #00C5A1;
+    color: lightskyblue;
 }
 
 .loading-spinner {
@@ -123,4 +123,30 @@ body {
     justify-content: center;
     margin-top: 150px;
     color: #00C5A1;
+}
+
+Link {
+    color: lightskyblue
+}
+
+a {
+    color: lightskyblue
+}
+
+h4 {
+    color: lightskyblue
+}
+
+#submit-button {
+    background-color: #0E81C7;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center
+}
+
+#submit-button:hover {
+    color: #fff;
+    opacity: 0.75;
+    background-color: lightskyblue     
 }

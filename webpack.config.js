@@ -32,6 +32,6 @@ module.exports = {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'public'),
     publicPath: '/js/',
-    port: 9090
+    port: process.env || 9090
   }
 };
